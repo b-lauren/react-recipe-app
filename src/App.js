@@ -1,8 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
+import React, { useEffect, useState } from "react";
 
 function App() {
-  const exampleRequest = `https://api.edamam.com/search?q=chicken&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_ID}`;
+  useEffect(() => {
+    getRecipes();
+  }, []);
+
+  const getRecipes = async () => {
+    const response = await fetch(
+      `https://api.edamam.com/search?q=chicken&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`
+    );
+    const data = await response.json();
+    console.log(data.hits);
+  };
+
   return (
     <div className="App">
       <h1>Hello React</h1>
