@@ -32,19 +32,22 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello React</h1>
+      <div>
+        <h1>Find Your Next Recipe</h1>
+        <img src="breakfast2.svg" alt="" />
+        <form onSubmit={getSearch} className="search-form">
+          <input
+            className="search-bar"
+            type="text"
+            value={search}
+            onChange={updateSearch}
+          />
+          <button className="search-button" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
 
-      <form onSubmit={getSearch} className="search-form">
-        <input
-          className="search-bar"
-          type="text"
-          value={search}
-          onChange={updateSearch}
-        />
-        <button className="search-button" type="submit">
-          Search
-        </button>
-      </form>
       <div className="recipes-container">
         {recipes.map((recipe) => (
           <Recipe
