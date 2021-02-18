@@ -32,20 +32,25 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <h1>Find Your Next Recipe</h1>
-        <img src="breakfast2.svg" alt="" />
-        <form onSubmit={getSearch} className="search-form">
-          <input
-            className="search-bar"
-            type="text"
-            value={search}
-            onChange={updateSearch}
-          />
-          <button className="search-button" type="submit">
-            Search
-          </button>
-        </form>
+      <div className="main-container">
+        <div className="child">
+          <h1>Find Your Next Recipe</h1>
+          <p>Search for your favourite ingredient e.g. 'Cheese'</p>
+          <form onSubmit={getSearch} className="search-form">
+            <input
+              className="search-bar"
+              type="text"
+              value={search}
+              onChange={updateSearch}
+            />
+            <button className="search-button" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <div className="child">
+          <img className="illustration" src="breakfast2.svg" alt="" />
+        </div>
       </div>
 
       <div className="recipes-container">
